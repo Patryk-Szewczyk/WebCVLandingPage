@@ -170,19 +170,26 @@
                                 <span class="diploma__frame-dot"></span>
                                 <span class="diploma__frame-dot"></span>
                             </div>
-                            <video
-                                class="diploma__video"
-                                controls
-                                muted
-                                loop
-                                playsinline
-                                preload="none"
-                                poster="images/diploma/preview.jpg"
-                                aria-label="Nagranie działania projektu dyplomowego"
-                            >
-                                <source src="videos/diploma/demo.mp4" type="video/mp4">
-                                <a href="videos/diploma/demo.mp4">Pobierz nagranie MP4</a>
-                            </video>
+                            <div class="diploma__player">
+                                <video
+                                    class="diploma__video"
+                                    controls
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="none"
+                                    poster="images/projects/img-3.jpg"
+                                    aria-label="Nagranie działania projektu dyplomowego"
+                                >
+                                    <source src="video/hostile-fight.mp4" type="video/mp4">
+                                    <a href="video/hostile-fight.mp4">Pobierz nagranie MP4</a>
+                                </video>
+
+                                <button class="diploma__play" type="button" hidden>
+                                    <span class="diploma__play-icon" aria-hidden="true">▶</span>
+                                    <span class="diploma__play-label">Odtwórz nagranie</span>
+                                </button>
+                            </div>
                         </div>
                         <figcaption class="diploma__caption">
                             [Wymień najważniejsze funkcje pokazane w nagraniu.]
@@ -202,7 +209,7 @@
                             <li class="diploma__technology">ASP.NET Core</li>
                             <li class="diploma__technology">PostgreSQL</li>
                         </ul>
-                        <a class="diploma__link" href="videos/diploma/demo.mp4">
+                        <a class="diploma__link" href="video/hostile-fight.mp4">
                             Otwórz nagranie
                             <span class="diploma__link-arrow" aria-hidden="true">↗</span>
                         </a>
@@ -281,10 +288,11 @@
                         <img class="skill-item__image" src="images/stack/img-24.png" />
                         <div class="skill-item__text-wrapper">
                             <h2 class="skill-item__title">Git</h2>
-                            <div class="skill-item__rate" data-rate="1"></div>
+                            <div class="skill-item__rate" data-rate="2"></div>
                             <div class="skill-item__details-wrapper">
                                 <p class="skill-item__excerpt">
-                                    Wykorzystuję Git do wersjonowania kodu i pracy z gałęziami. Znam podstawowe operacje.
+                                    Korzystam z Git do wersjonowania kodu i pracy z gałęziami. Zapisuję zmiany w commitach, synchronizuję
+                                    lokalne repozytorium z GitHubem i w ten sposób publikuję aktualizacje w GitHub Pages.
                                 </p>
                             </div>
                         </div>

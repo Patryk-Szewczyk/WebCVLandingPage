@@ -145,3 +145,34 @@ function rate(maxStars = 5) {
     });
 }
 rate();
+
+function setupDiplomaPlayer() {
+    const player = document.querySelector('.diploma__player');
+    if (!player) {
+        return;
+    }
+    const video = player.querySelector('.diploma__video');
+    const playButton = player.querySelector('.diploma__play');
+    const label = playButton.querySelector('.diploma__play-label');
+    function syncPlayButton() {
+        const showPlayButton = video.paused || video.ended;
+        if (!showPlayButton && document.activeElement === playButton) {
+            video.focus();
+        }
+        label.textContent = video.currentTime > 0 && !video.ended ? 'Wznów nagranie' : 'Odtwórz nagranie';
+        playButton.hidden = !showPlayButton;
+    }
+
+    playButton.addEventListener('click', async () => {
+        try {
+            await video.play();
+        } catch (error) {
+            console.error('Nie udało się odtworzyć nagrania Space Force.', error);
+        }
+    });
+    video.addEventListener('play', syncPlayButton);
+    video.addEventListener('pause', syncPlayButton);
+    video.addEventListener('ended', syncPlayButton);
+    syncPlayButton();
+}
+setupDiplomaPlayer();

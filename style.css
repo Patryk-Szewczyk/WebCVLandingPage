@@ -1440,7 +1440,7 @@ h1 {
 
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine)
        and (prefers-reduced-motion: no-preference) {
-  .diploma .diploma__frame {
+  /* .diploma .diploma__frame {
     transform: rotate(2deg);
     transition: transform .45s ease, box-shadow .45s ease;
   }
@@ -1448,5 +1448,59 @@ h1 {
   .diploma .diploma__preview:is(:hover, :focus-within) .diploma__frame {
     transform: translateY(-8px) rotate(0);
     box-shadow: 0 var(--pd-20) var(--pd-32) rgba(0, 0, 0, .3);
-  }
+  } */
+}
+.diploma .diploma__player {
+  position: relative;
+}
+
+.diploma .diploma__play:not([hidden]) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-items: center;
+  gap: var(--pd-8);
+  max-width: calc(100% - var(--pd-24));
+  padding: var(--pd-12);
+  color: var(--cl-white);
+  background: var(--cl-blue-dark);
+  border: 2px solid var(--cl-green);
+  border-radius: var(--pd-16);
+  font: inherit;
+  font-size: clamp(.75rem, 2vw, 1rem);
+  cursor: pointer;
+}
+
+.diploma .diploma__play-icon {
+  position: relative;
+  width: clamp(32px, 7vw, 56px);
+  aspect-ratio: 1;
+  color: var(--cl-blue-dark);
+  background: var(--cl-green);
+  border-radius: 50%;
+  font-size: 0;
+}
+
+.diploma .diploma__play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  aspect-ratio: 1 / 1.15;
+  background-color: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transform: translate(-35%, -50%);
+  cursor: inherit;
+}
+
+.diploma .diploma__play span {
+  cursor: inherit;
+}
+
+.diploma .diploma__play:focus-visible {
+  outline: 3px solid var(--cl-white);
+  outline-offset: 4px;
 }
